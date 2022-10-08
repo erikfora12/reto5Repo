@@ -16,11 +16,15 @@ public class bike {
     @Column(name = "year")
     private Integer year;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "category")
     @JsonIgnoreProperties("bikes")
     private category category;
 
+    @Column(name = "name")
+    private  String name;
+    @Column(name = "description")
+    private String description;
 
     public Integer getId() {
         return id;
@@ -40,6 +44,22 @@ public class bike {
 
     public Integer getYear() {
         return year;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setYear(Integer year) {
