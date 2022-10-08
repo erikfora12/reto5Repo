@@ -19,10 +19,10 @@ public class bikeService {
     }
 
     public bike save(bike c){
-        if(c.getBikesId() == null){
+        if(c.getId() == null){
             return bikeRp.save(c);
         }else{
-            Optional<bike> Co = bikeRp.find(c.getBikesId());
+            Optional<bike> Co = bikeRp.find(c.getId());
             if (Co.isPresent()){
                 return c;
             }else{
@@ -33,8 +33,8 @@ public class bikeService {
     }
 
     public bike Update(bike c) {
-        if (c.getBikesId() != null) {
-            Optional<bike> Co = bikeRp.find(c.getBikesId());
+        if (c.getId() != null) {
+            Optional<bike> Co = bikeRp.find(c.getId());
             if(Co.isPresent()){
                 bikeRp.save(Co.get());
                 return Co.get();

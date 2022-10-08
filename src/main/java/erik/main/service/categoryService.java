@@ -20,10 +20,10 @@ public class categoryService {
     }
 
     public category save(category c){
-        if(c.getCategoryId() == null){
+        if(c.getId() == null){
             return categoryRp.save(c);
         }else{
-            Optional<category> Co = categoryRp.find(c.getCategoryId());
+            Optional<category> Co = categoryRp.find(c.getId());
             if (Co.isPresent()){
                return c;
             }else{
@@ -34,8 +34,8 @@ public class categoryService {
     }
 
     public category Update(category c) {
-       if (c.getCategoryId() != null) {
-         Optional<category> Co = categoryRp.find(c.getCategoryId());
+       if (c.getId() != null) {
+         Optional<category> Co = categoryRp.find(c.getId());
          if(Co.isPresent()){
             if(c.getName()!=null){
                Co.get().setName(c.getName());

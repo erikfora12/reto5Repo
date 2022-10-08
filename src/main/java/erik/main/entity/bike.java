@@ -10,7 +10,7 @@ public class bike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer bikesId;
+    private Integer id;
     @Column(name = "brand")
     private String brand;
     @Column(name = "year")
@@ -22,12 +22,12 @@ public class bike {
     private category category;
 
 
-    public Integer getBikesId() {
-        return bikesId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setBikesId(Integer bikesId) {
-        this.bikesId = bikesId;
+    public void setId(Integer bikesId) {
+        this.id = bikesId;
     }
 
     public String getBrand() {
