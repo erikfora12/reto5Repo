@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "category")
+@Table(name = "_category")
 public class category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
