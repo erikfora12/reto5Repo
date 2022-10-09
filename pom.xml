@@ -14,7 +14,6 @@
     <name>reto3Final</name>
     <description>reto3Final</description>
     <properties>
-        <start-class>erik.main.Reto3FinalApplication</start-class>
         <java.version>17</java.version>
     </properties>
     <dependencies>
