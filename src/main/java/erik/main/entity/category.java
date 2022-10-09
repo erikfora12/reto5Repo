@@ -8,15 +8,13 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "`category`")
+@Table(name = "category")
 public class category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "`id`")
+
     private Integer id;
-    @Column(name = "`name`")
     private  String name;
-    @Column(name = "`description`")
     private  String description;
 
     @OneToMany(cascade = {CascadeType.MERGE})
