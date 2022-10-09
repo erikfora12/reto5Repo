@@ -28,21 +28,7 @@ public class message {
     @JsonIgnoreProperties("bikes")
     private bike bike;
 
-    public erik.main.entity.bike getBike() {
-        return bike;
-    }
 
-    public void setBike(erik.main.entity.bike bike) {
-        this.bike = bike;
-    }
-
-    public erik.main.entity.client getClient() {
-        return client;
-    }
-
-    public void setClient(erik.main.entity.client client) {
-        this.client = client;
-    }
 
 
 
@@ -62,4 +48,21 @@ public class message {
     public void setMessageText(String messageText) {
         this.messageText = messageText;
     }
+
+    public erik.main.entity.bike getBike() {
+        return bike;
+    }
+
+    public void setBike(erik.main.entity.bike bike) {
+        this.bike = bike;
+    }
+
+    public erik.main.entity.client getClient() {
+        return client;
+    }
+
+    public void setClient(erik.main.entity.client client) {
+        this.client = client;
+    }
+
 }
