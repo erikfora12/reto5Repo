@@ -10,15 +10,13 @@ import java.util.List;
 public class bike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "`id`")
+
     private Integer id;
-    @Column(name = "brand")
     private String brand;
-    @Column(name = "year")
     private Integer year;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "`category`")
+    @JoinColumn(name = "category")
     @JsonIgnoreProperties("bikes")
     private category category;
 

@@ -18,14 +18,14 @@ public class reservation {
     private Date devolutionDate;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "`client`")
+    @JoinColumn(name = "idClient")
     @JsonIgnoreProperties("`messages`")
     private client client;
 
 
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "bikes")
+    @JoinColumn(name = "id")
     @JsonIgnoreProperties("bikes")
     private bike bike;
 
