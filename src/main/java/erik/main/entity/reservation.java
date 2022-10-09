@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservations")
+@Table(name = "`reservations`")
 public class reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,8 +18,8 @@ public class reservation {
     private Date devolutionDate;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "client")
-    @JsonIgnoreProperties("messages")
+    @JoinColumn(name = "`client`")
+    @JsonIgnoreProperties("`messages`")
     private client client;
 
 

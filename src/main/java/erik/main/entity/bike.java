@@ -6,11 +6,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "bikes")
+@Table(name = "`bikes`")
 public class bike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "`id`")
     private Integer id;
     @Column(name = "brand")
     private String brand;
@@ -18,7 +18,7 @@ public class bike {
     private Integer year;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "category")
+    @JoinColumn(name = "`category`")
     @JsonIgnoreProperties("bikes")
     private category category;
 
@@ -29,13 +29,13 @@ public class bike {
     private String description;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "messages")
-    @JsonIgnoreProperties("messages")
+    @JoinColumn(name = "`messages`")
+    @JsonIgnoreProperties("`messages`")
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "reservations")
-    @JsonIgnoreProperties("reservations")
+    @JoinColumn(name = "`reservations`")
+    @JsonIgnoreProperties("`reservations`")
     private List<reservation> reservations;
 
     public List<message> getMessages() {
