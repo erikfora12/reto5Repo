@@ -3,6 +3,7 @@ package erik.main.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "bikes")
@@ -21,10 +22,37 @@ public class bike {
     @JsonIgnoreProperties("bikes")
     private category category;
 
+
     @Column(name = "name")
     private  String name;
     @Column(name = "description")
     private String description;
+
+    @OneToMany(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "messages")
+    @JsonIgnoreProperties("messages")
+    private List<message> messages;
+
+    @OneToMany(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "reservations")
+    @JsonIgnoreProperties("reservations")
+    private List<reservation> reservations;
+
+    public List<message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<message> messages) {
+        this.messages = messages;
+    }
+
+    public List<reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<reservation> reservations) {
+        this.reservations = reservations;
+    }
 
     public Integer getId() {
         return id;

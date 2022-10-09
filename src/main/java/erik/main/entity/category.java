@@ -2,7 +2,6 @@ package erik.main.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -20,7 +19,7 @@ public class category implements Serializable {
     @Column(name = "description")
     private  String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
+    @OneToMany(cascade = {CascadeType.MERGE})
     @JsonIgnoreProperties("category")
     private List<bike> bikes;
 
