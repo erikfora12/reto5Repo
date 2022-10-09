@@ -18,7 +18,7 @@ public class category implements Serializable {
     private  String description;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JsonIgnoreProperties("`category`")
+    @JsonIgnoreProperties("category")
     private List<bike> bikes;
 
 

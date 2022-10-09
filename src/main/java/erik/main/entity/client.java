@@ -18,7 +18,7 @@ public class client {
     private Integer age;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "messages")
+    @JoinColumn(name = "IdMessage")
     @JsonIgnoreProperties("messages")
     private List<message> messages;
 

@@ -27,8 +27,8 @@ public class bike {
     private String description;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "`messages`")
-    @JsonIgnoreProperties("`messages`")
+    @JoinColumn(name = "IdMessage")
+    @JsonIgnoreProperties("messages")
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
