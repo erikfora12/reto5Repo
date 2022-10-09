@@ -32,7 +32,7 @@ public class bike {
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "`reservations`")
+    @JoinColumn(name = "idReservation")
     @JsonIgnoreProperties("`reservations`")
     private List<reservation> reservations;
 

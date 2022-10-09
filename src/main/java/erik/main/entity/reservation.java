@@ -19,7 +19,7 @@ public class reservation {
 
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties("`messages`")
+    @JsonIgnoreProperties({"messages","reservations"})
     private client client;
 
 
