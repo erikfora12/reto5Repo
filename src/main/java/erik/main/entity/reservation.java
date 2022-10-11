@@ -18,14 +18,19 @@ public class reservation {
     private String status="created";
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties({"messages","reservations"})
-    private client client;
-
-    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("reservations")
     private bike bike;
+
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "messages")
+    @JsonIgnoreProperties({"bike","client"})
+    private message messages;
+
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "idClient")
+    @JsonIgnoreProperties({"messages","reservations"})
+    private client client;
 
     private String score;
 
@@ -61,20 +66,28 @@ public class reservation {
         this.status = status;
     }
 
-    public erik.main.entity.client getClient() {
-        return client;
-    }
-
-    public void setClient(erik.main.entity.client client) {
-        this.client = client;
-    }
-
     public erik.main.entity.bike getBike() {
         return bike;
     }
 
     public void setBike(erik.main.entity.bike bike) {
         this.bike = bike;
+    }
+
+    public message getMessages() {
+        return messages;
+    }
+
+    public void setMessages(message messages) {
+        this.messages = messages;
+    }
+
+    public erik.main.entity.client getClient() {
+        return client;
+    }
+
+    public void setClient(erik.main.entity.client client) {
+        this.client = client;
     }
 
     public String getScore() {
