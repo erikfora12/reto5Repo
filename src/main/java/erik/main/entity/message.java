@@ -13,12 +13,12 @@ public class message {
     private Integer IdMessage;
     private String  messageText;
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "client")
     @JsonIgnoreProperties("client")
     private client client;
 
-    @ManyToOne (cascade = {CascadeType.ALL})
+    @ManyToOne (cascade = {CascadeType.MERGE})
     @JoinColumn(name = "bike")
     @JsonIgnoreProperties("bikes")
     private  bike bike;
