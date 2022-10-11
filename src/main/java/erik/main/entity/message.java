@@ -2,7 +2,6 @@ package erik.main.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 
 
@@ -12,26 +11,17 @@ public class message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer IdMessage;
-
     private String  messageText;
-
-
 
     @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties("client")
     private client client;
 
-
     @ManyToOne (cascade = {CascadeType.ALL})
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("bikes")
     private  bike bike;
-
-
-
-
-
 
     public Integer getIdMessage() {
         return IdMessage;
