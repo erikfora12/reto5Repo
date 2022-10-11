@@ -1,27 +1,27 @@
 package erik.main.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 
 import javax.persistence.*;
 
 
 @Entity
-@Table(name = "messages")
-@JsonPropertyOrder({"IdMessage","messageText","bike","client"})
+@Table(name="messages")
+
 public class message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer IdMessage;
+    private Integer idMessage;
     private String  messageText;
 
 
     @ManyToOne (cascade = {CascadeType.MERGE})
     @JoinColumn(name = "bike")
     @JsonIgnoreProperties({"messages","reservations"})
-    private  bike bike;
+    private bike bike;
 
 
     @ManyToOne(cascade = {CascadeType.MERGE})
@@ -30,11 +30,11 @@ public class message {
     private client client;
 
     public Integer getIdMessage() {
-        return IdMessage;
+        return idMessage;
     }
 
     public void setIdMessage(Integer idMessage) {
-        IdMessage = idMessage;
+        this.idMessage = idMessage;
     }
 
     public String getMessageText() {
