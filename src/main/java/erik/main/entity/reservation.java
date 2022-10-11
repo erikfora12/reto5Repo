@@ -15,12 +15,12 @@ public class reservation {
     private  Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
+    private String status="created";
+
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"messages","reservations"})
     private client client;
-
-
 
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "id")
@@ -51,6 +51,14 @@ public class reservation {
 
     public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public erik.main.entity.client getClient() {
