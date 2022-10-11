@@ -17,12 +17,12 @@ public class client {
     private String name;
     private Integer age;
 
-    @OneToMany(cascade = {CascadeType.MERGE})
+    @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "client")
     @JoinColumn(name = "IdMessage")
     @JsonIgnoreProperties("messages")
     private List<message> messages;
 
-    @OneToMany(cascade = {CascadeType.MERGE})
+    @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "client")
     @JoinColumn(name = "idReservation")
     @JsonIgnoreProperties("reservations")
     private List<reservation> reservations;
