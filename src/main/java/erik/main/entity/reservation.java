@@ -17,14 +17,14 @@ public class reservation {
     @Temporal(TemporalType.DATE)
     private Date devolutionDate;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"messages","reservations"})
     private client client;
 
 
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("bikes")
     private bike bike;
