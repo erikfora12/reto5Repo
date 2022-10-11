@@ -17,14 +17,14 @@ public class message {
 
 
 
-    @OneToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "client")
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "idClient")
     @JsonIgnoreProperties("client")
     private client client;
 
 
-    @OneToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "bike")
+    @ManyToOne (cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "id")
     @JsonIgnoreProperties("bikes")
     private  bike bike;
 
