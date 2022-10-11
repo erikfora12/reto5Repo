@@ -2,6 +2,7 @@ package erik.main.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,12 +13,8 @@ public class reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Integer idReservation;
-
-    @Temporal(TemporalType.DATE)
     private Date startDate;
-    @Temporal(TemporalType.DATE)
     private Date devolutionDate;
-
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "idClient")
     @JsonIgnoreProperties({"messages","reservations"})

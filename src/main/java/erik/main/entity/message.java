@@ -3,11 +3,14 @@ package erik.main.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import javax.persistence.*;
 
 
 @Entity
 @Table(name = "messages")
+@JsonPropertyOrder({"IdMessage","messageText","bike","client"})
 public class message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
