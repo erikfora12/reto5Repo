@@ -14,12 +14,12 @@ public class message {
     private String  messageText;
 
     @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "idClient")
+    @JoinColumn(name = "client")
     @JsonIgnoreProperties("client")
     private client client;
 
     @ManyToOne (cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "bike")
     @JsonIgnoreProperties("bikes")
     private  bike bike;
 

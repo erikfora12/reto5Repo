@@ -20,19 +20,16 @@ public class bike {
     @JsonIgnoreProperties("bikes")
     private category category;
 
-
-    @Column(name = "name")
     private  String name;
-    @Column(name = "description")
     private String description;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "IdMessage")
+    @JoinColumn(name = "messages")
     @JsonIgnoreProperties("messages")
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "idReservation")
+    @JoinColumn(name = "Reservation")
     @JsonIgnoreProperties("`reservations`")
     private List<reservation> reservations;
 

@@ -18,12 +18,12 @@ public class client {
     private Integer age;
 
     @OneToMany(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "IdMessage")
+    @JoinColumn(name = "messages")
     @JsonIgnoreProperties("messages")
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "idReservation")
+    @JoinColumn(name = "reservations")
     @JsonIgnoreProperties("reservations")
     private List<reservation> reservations;
 
