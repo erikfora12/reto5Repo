@@ -18,12 +18,12 @@ public class reservation {
     private String status="created";
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "bike")
     @JsonIgnoreProperties("reservations")
     private bike bike;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "idClient")
+    @JoinColumn(name = "client")
     @JsonIgnoreProperties({"reservations","messages"})
     private client client;
 
