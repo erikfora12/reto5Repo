@@ -13,15 +13,17 @@ public class message {
     private Integer IdMessage;
     private String  messageText;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
-    @JoinColumn(name = "client")
-    @JsonIgnoreProperties("client")
-    private client client;
 
     @ManyToOne (cascade = {CascadeType.MERGE})
     @JoinColumn(name = "bike")
     @JsonIgnoreProperties("bikes")
     private  bike bike;
+
+
+    @ManyToOne(cascade = {CascadeType.MERGE})
+    @JoinColumn(name = "client")
+    @JsonIgnoreProperties("client")
+    private client client;
 
     public Integer getIdMessage() {
         return IdMessage;
@@ -54,5 +56,4 @@ public class message {
     public void setClient(erik.main.entity.client client) {
         this.client = client;
     }
-
 }

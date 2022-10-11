@@ -12,16 +12,19 @@ public class bike {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
+    private  String name;
     private String brand;
     private Integer year;
+
+    private String description;
 
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "category")
     @JsonIgnoreProperties("bikes")
     private category category;
 
-    private  String name;
-    private String description;
+
+
 
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "messages")
@@ -32,6 +35,54 @@ public class bike {
     @JoinColumn(name = "Reservation")
     @JsonIgnoreProperties("`reservations`")
     private List<reservation> reservations;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public erik.main.entity.category getCategory() {
+        return category;
+    }
+
+    public void setCategory(erik.main.entity.category category) {
+        this.category = category;
+    }
 
     public List<message> getMessages() {
         return messages;
@@ -48,54 +99,4 @@ public class bike {
     public void setReservations(List<reservation> reservations) {
         this.reservations = reservations;
     }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer bikesId) {
-        this.id = bikesId;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public Integer getYear() {
-        return year;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    public erik.main.entity.category getCategory() {
-        return category;
-    }
-
-    public void setCategory(erik.main.entity.category category) {
-        this.category = category;
-    }
-
-
 }
