@@ -29,6 +29,8 @@ public class reservation {
     @JsonIgnoreProperties("bikes")
     private bike bike;
 
+    private String score;
+
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -67,5 +69,13 @@ public class reservation {
 
     public void setBike(erik.main.entity.bike bike) {
         this.bike = bike;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
 }
