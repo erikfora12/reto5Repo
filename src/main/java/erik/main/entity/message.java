@@ -1,6 +1,7 @@
 package erik.main.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
@@ -16,13 +17,13 @@ public class message {
 
     @ManyToOne (cascade = {CascadeType.MERGE})
     @JoinColumn(name = "bike")
-    @JsonIgnoreProperties("bikes")
+    @JsonIgnoreProperties({"messages","reservations"})
     private  bike bike;
 
 
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "client")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"messages","reservations"})
     private client client;
 
     public Integer getIdMessage() {

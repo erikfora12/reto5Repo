@@ -29,7 +29,7 @@ public class reservation {
 
     @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "id")
-    @JsonIgnoreProperties("bikes")
+    @JsonIgnoreProperties("reservations")
     private bike bike;
 
     private String score;

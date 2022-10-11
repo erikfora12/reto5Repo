@@ -33,7 +33,7 @@ public class bike {
 
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "Reservation")
-    @JsonIgnoreProperties("`reservations`")
+    @JsonIgnoreProperties("reservations")
     private List<reservation> reservations;
 
     public Integer getId() {
