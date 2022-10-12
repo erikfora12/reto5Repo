@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="messages")
 
-public class message {
+public class message{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMessage;
