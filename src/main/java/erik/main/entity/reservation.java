@@ -17,12 +17,12 @@ public class reservation {
     private Date devolutionDate;
     private String status="created";
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "bike")
     @JsonIgnoreProperties("reservations")
     private bike bike;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "client")
     @JsonIgnoreProperties({"reservations","messages"})
     private client client;
