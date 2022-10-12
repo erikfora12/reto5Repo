@@ -18,17 +18,17 @@ public class bike {
 
     private String description;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "category")
     @JsonIgnoreProperties("bikes")
     private category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST})
+    @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "messages")
     @JsonIgnoreProperties("bikes")
     private List<message> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST})
+    @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "reservations")
     @JsonIgnoreProperties("bikes")
     private List<reservation> reservations;

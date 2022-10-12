@@ -17,7 +17,7 @@ public class category implements Serializable {
     private  String name;
     private  String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST})
+    @OneToMany(cascade = {CascadeType.MERGE})
     @JsonIgnoreProperties("category")
     private List<bike> bikes;
 

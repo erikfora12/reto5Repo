@@ -18,13 +18,13 @@ public class message{
     private String  messageText;
 
 
-    @ManyToOne (cascade = {CascadeType.PERSIST})
+    @ManyToOne (cascade = {CascadeType.MERGE})
     @JoinColumn(name = "bike")
     @JsonIgnoreProperties({"messages","reservations"})
     private bike bike;
 
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "client")
     @JsonIgnoreProperties({"messages","reservations"})
     private client client;
