@@ -20,7 +20,7 @@ public class message {
 
     @ManyToOne (cascade = {CascadeType.MERGE})
     @JoinColumn(name = "bike")
-    @JsonIgnoreProperties({"reservations"})
+    @JsonIgnoreProperties({"messages"})
     private bike bike;
 
 

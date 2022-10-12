@@ -25,12 +25,12 @@ public class bike {
 
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "messages")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties("bikes")
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "reservation")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties("bikes")
     private List<reservation> reservations;
 
     public Integer getId() {

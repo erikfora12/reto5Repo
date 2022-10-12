@@ -19,12 +19,12 @@ public class client {
 
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "messages")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties("client")
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "reservations")
-    @JsonIgnoreProperties("reservations")
+    @JsonIgnoreProperties("client")
     private List<reservation> reservations;
 
     public List<message> getMessages() {
