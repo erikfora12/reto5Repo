@@ -25,7 +25,7 @@ public class bike {
 
 
     @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "bike")
-    @JsonIgnoreProperties("bike")
+    @JsonIgnoreProperties({"bike","client"})
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
