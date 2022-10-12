@@ -24,12 +24,12 @@ public class bike {
     private category category;
 
 
-    @OneToMany(cascade = {CascadeType.MERGE})
+    @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "bike")
     @JoinColumn(name = "messages")
     @JsonIgnoreProperties("bikes")
     private List<message> messages;
 
-    @OneToMany(cascade = {CascadeType.MERGE})
+    @OneToMany(cascade = {CascadeType.MERGE}, mappedBy = "bike")
     @JoinColumn(name = "reservations")
     @JsonIgnoreProperties("bikes")
     private List<reservation> reservations;
