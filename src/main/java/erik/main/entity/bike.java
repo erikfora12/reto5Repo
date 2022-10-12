@@ -25,11 +25,11 @@ public class bike {
 
 
     @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "bike")
-    @JsonIgnoreProperties("bikes")
+    @JsonIgnoreProperties("bike")
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE})
-    @JsonIgnoreProperties("bikes")
+    @JsonIgnoreProperties("bike")
     private List<reservation> reservations;
 
     public Integer getId() {
