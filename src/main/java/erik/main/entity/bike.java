@@ -24,7 +24,7 @@ public class bike {
     private category category;
 
 
-    @OneToMany(cascade = {CascadeType.MERGE})
+    @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "bike")
     @JsonIgnoreProperties("bikes")
     private List<message> messages;
 
