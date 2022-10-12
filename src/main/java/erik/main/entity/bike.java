@@ -23,6 +23,7 @@ public class bike {
     @JsonIgnoreProperties("bikes")
     private category category;
 
+
     @OneToMany(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "messages")
     @JsonIgnoreProperties("bikes")
