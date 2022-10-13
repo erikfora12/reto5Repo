@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(maxAge = 3600)
+@CrossOrigin(origins = "*",maxAge = 600)
 @RestController
 @RequestMapping("api/Reservation")
 public class reservationController {

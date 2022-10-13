@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(maxAge = 3600)
+@CrossOrigin(origins = "*",maxAge = 600)
 @RestController
 @RequestMapping("/api/Bike")
 public class bikeController {

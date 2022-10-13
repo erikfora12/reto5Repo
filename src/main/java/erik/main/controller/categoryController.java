@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(maxAge = 3600)
+@CrossOrigin(origins = "*",maxAge = 600)
 @RestController
 @RequestMapping("api/Category")
 public class categoryController {
@@ -23,6 +23,16 @@ public class categoryController {
     @ResponseStatus(HttpStatus.CREATED)
     public category save(@RequestBody category c){
           return  catServ.save(c);
+    }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public category update(@RequestBody category c){
+        return  catServ.Update(c);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") int id){
+        catServ.delete(id);
     }
 
 }
