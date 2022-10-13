@@ -1,6 +1,7 @@
 package erik.main.controller;
 
 
+import erik.main.entity.category;
 import erik.main.entity.message;
 import erik.main.service.messageService;
 
@@ -27,4 +28,16 @@ public class messageController {
     public message save(@RequestBody message c){
         return  msgSvc.save(c);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public message update(@RequestBody message c){
+        return  msgSvc.Update(c);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") int id){
+        msgSvc.delete(id);
+    }
+
 }

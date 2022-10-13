@@ -1,6 +1,7 @@
 package erik.main.controller;
 
 
+import erik.main.entity.category;
 import erik.main.entity.reservation;
 import erik.main.service.reservationService;
 
@@ -25,5 +26,16 @@ public class reservationController {
     @ResponseStatus(HttpStatus.CREATED)
     public reservation save(@RequestBody reservation b){
         return  reservServ.save(b);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public reservation update(@RequestBody reservation c){
+        return  reservServ.Update(c);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") int id){
+        reservServ.delete(id);
     }
 }

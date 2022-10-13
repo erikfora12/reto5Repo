@@ -1,6 +1,7 @@
 package erik.main.controller;
 
 import erik.main.entity.bike;
+import erik.main.entity.category;
 import erik.main.service.bikeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +26,16 @@ public class bikeController {
     public bike save(@RequestBody bike b){
         return  bikeServ.save(b);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public bike update(@RequestBody bike b){
+        return   bikeServ.Update(b);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") int id){
+        bikeServ.delete(id);
+    }
+
 }

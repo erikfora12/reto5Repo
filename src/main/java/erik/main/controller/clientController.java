@@ -1,5 +1,6 @@
 package erik.main.controller;
 
+import erik.main.entity.category;
 import erik.main.entity.client;
 import erik.main.service.clientSevice;
 
@@ -24,6 +25,17 @@ public class clientController {
     @ResponseStatus(HttpStatus.CREATED)
     public client save(@RequestBody client c){
         return  cliServ.save(c);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public client update(@RequestBody client c){
+        return  cliServ.Update(c);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") int id){
+        cliServ.delete(id);
     }
 
 }
