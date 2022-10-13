@@ -38,9 +38,6 @@ public class categoryService {
        if (c.getId() != null) {
          Optional<category> Co = categoryRp.find(c.getId());
          if(Co.isPresent()){
-            if(c.getName()!=null){
-               Co.get().setName(c.getName());
-            }
             categoryRp.save(Co.get());
             return Co.get();
          }else{ return c; }

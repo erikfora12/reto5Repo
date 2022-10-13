@@ -30,7 +30,7 @@ public class bikeController {
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
     public bike update(@RequestBody bike b){
-        return   bikeServ.Update(b);
+        return bikeServ.Update(b);
     }
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
