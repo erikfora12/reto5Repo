@@ -36,6 +36,18 @@ public class bikeService {
         if (c.getId() != null) {
             Optional<bike> Co = bikeRp.find(c.getId());
             if(Co.isPresent()){
+                if(c.getName() != null){
+                    Co.get().setName(c.getName());
+                }
+                if(c.getBrand() != null){
+                    Co.get().setBrand(c.getBrand());
+                }
+                if(c.getYear() != null){
+                    Co.get().setYear(c.getYear());
+                }
+                if(c.getDescription() != null){
+                    Co.get().setDescription(c.getDescription());
+                }
                 bikeRp.save(Co.get());
                 return Co.get();
             }else{ return c; }

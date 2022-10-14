@@ -1,6 +1,7 @@
 package erik.main.service;
 
 
+import erik.main.entity.bike;
 import erik.main.entity.category;
 import erik.main.repository.categoryRepository;
 
@@ -35,15 +36,19 @@ public class categoryService {
     }
 
     public category Update(category c) {
-       if (c.getId() != null) {
-         Optional<category> Co = categoryRp.find(c.getId());
-         c.setName(Co.get().getName());
-         c.setDescription(Co.get().getDescription());
-         if(Co.isPresent()){
-            categoryRp.save(Co.get());
-            return Co.get();
-         }else{ return c; }
-       }else{ return c; }
+        if (c.getId() != null) {
+            Optional<category> Co = categoryRp.find(c.getId());
+            if(Co.isPresent()){
+                if(c.getName() != null){
+                    Co.get().setName(c.getName());
+                }
+                if(c.getDescription() != null){
+                    Co.get().setDescription(c.getDescription());
+                }
+                categoryRp.save(Co.get());
+                return Co.get();
+            }else{ return c; }
+        }else{ return c; }
     }
 
     public  boolean delete(int id){

@@ -39,6 +39,15 @@ public class clientSevice {
                 if(c.getName()!=null){
                     Co.get().setName(c.getName());
                 }
+                if(c.getAge()!=null){
+                    Co.get().setAge(c.getAge());
+                }
+                if(c.getEmail()!=null){
+                    Co.get().setEmail(c.getEmail());
+                }
+                if(c.getPassword()!=null){
+                    Co.get().setPassword(c.getPassword());
+                }
                 clientRp.save(Co.get());
                 return Co.get();
             }else{ return c; }

@@ -38,6 +38,12 @@ public class reservationService {
             Optional<reservation> Co = resvRp.find(c.getIdReservation());
             if(Co.isPresent()){
                 resvRp.save(Co.get());
+                if(c.getStartDate()!=null){
+                    Co.get().setStartDate(c.getDevolutionDate());
+                }
+                if(c.getDevolutionDate()!=null){
+                    Co.get().setDevolutionDate(c.getDevolutionDate());
+                }
                 return Co.get();
             }else{ return c; }
         }else{ return c; }

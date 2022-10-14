@@ -37,6 +37,10 @@ public class messageService {
         if (c.getIdMessage() != null) {
             Optional<message> Co = msgRp.find(c.getIdMessage());
             if(Co.isPresent()){
+                if(c.getMessageText()!=null){
+                    Co.get().setMessageText(c.getMessageText());
+                }
+
                 msgRp.save(Co.get());
                 return Co.get();
             }else{ return c; }
