@@ -38,7 +38,7 @@ public class categoryService {
     public category Update(category c) {
         if (c.getId() != null) {
             Optional<category> Co = categoryRp.find(c.getId());
-            if(Co.isPresent()){
+            if(!Co.isEmpty()){
                 if(c.getName() != null){
                     Co.get().setName(c.getName());
                 }

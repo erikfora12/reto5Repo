@@ -35,7 +35,7 @@ public class clientSevice {
     public client Update(client c) {
         if (c.getIdClient() != null) {
             Optional<client> Co = clientRp.find(c.getIdClient());
-            if(Co.isPresent()){
+            if(!Co.isEmpty()){
                 if(c.getName()!=null){
                     Co.get().setName(c.getName());
                 }

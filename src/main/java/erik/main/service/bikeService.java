@@ -35,7 +35,7 @@ public class bikeService {
     public bike Update(bike c) {
         if (c.getId() != null) {
             Optional<bike> Co = bikeRp.find(c.getId());
-            if(Co.isPresent()){
+            if(!Co.isEmpty()){
                 if(c.getName() != null){
                     Co.get().setName(c.getName());
                 }
