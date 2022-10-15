@@ -68,7 +68,7 @@ public class reservationService {
 
     public statusService  getStatusReport(){
         List<reservation> completed = resvRp.findAllStatus("completed");
-        List<reservation> cancelled = resvRp.findAllStatus("canceled");
+        List<reservation> cancelled = resvRp.findAllStatus("cancelled");
 
         return new statusService(completed.size(),cancelled.size());
     }
