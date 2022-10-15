@@ -27,7 +27,7 @@ public class reservationRepository {
     }
 
     public  List<reservation>  findAllByDates(Date d1, Date d2){
-        return  resvRp.findAllByDate(d1,d2);
+        return  resvRp.findAllByStartDateAfterAndStartDateBefore(d1,d2);
     }
 
     public List<clientCounter> getTopClient(){
