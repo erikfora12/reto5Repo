@@ -2,11 +2,11 @@ package erik.main.service;
 
 public class statusService {
     private int completed;
-    private int canceled;
+    private int cancelled;
 
-    public statusService(int completed,int canceled) {
+    public statusService(int completed,int cancelled) {
         this.completed = completed;
-        this.canceled = canceled;
+        this.cancelled = cancelled;
     }
 
     public int getCompleted() {
@@ -17,11 +17,11 @@ public class statusService {
         this.completed = completed;
     }
 
-    public int getCanceled() {
-        return canceled;
+    public int getCancelled() {
+        return cancelled;
     }
 
-    public void setCanceled(int canceled) {
-        this.canceled = canceled;
+    public void setCancelled(int cancelled) {
+        this.cancelled = cancelled;
     }
 }
