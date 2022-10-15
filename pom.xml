@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>erik.main</groupId>
-    <artifactId>Reto3</artifactId>
-    <version>0.1.0-Beta</version>
-    <name>Reto3</name>
+    <artifactId>bikeApp</artifactId>
+    <version>0.2.0-Beta</version>
+    <name>bikeApp</name>
     <description>Reto3</description>
     <properties>
         <java.version>18</java.version>
@@ -44,6 +44,23 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-client</artifactId>
+            <version>5.7.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator-core</artifactId>
+            <version>0.52</version>
+        </dependency>
 
     </dependencies>
 
