@@ -23,7 +23,6 @@ public class client {
     private List<message> messages;
 
     @OneToMany(cascade = {CascadeType.MERGE},mappedBy = "client")
-    @JoinColumn(name = "reservations")
     @JsonIgnoreProperties("client")
     private List<reservation> reservations;
 
